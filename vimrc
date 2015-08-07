@@ -12,6 +12,8 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'atelierbram/vim-colors_atelier-schemes'
 NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
+NeoBundle 'goatslacker/mango.vim'
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 call neobundle#end()
 
