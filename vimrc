@@ -14,6 +14,7 @@ NeoBundle 'atelierbram/vim-colors_atelier-schemes'
 NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
 NeoBundle 'goatslacker/mango.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'fatih/vim-go'
 
 call neobundle#end()
 
