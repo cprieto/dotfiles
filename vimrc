@@ -15,6 +15,7 @@ NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
 NeoBundle 'goatslacker/mango.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'zanloy/vim-colors-sunburst'
 
 call neobundle#end()
 
@@ -61,7 +62,7 @@ if has("gui_running")
     endif
 else
     set background=dark
-    color mango
+    color sunburst
     hi cursorline cterm=none
     hi cursorlinenr cterm=underline
     hi cursorlinenr ctermfg=red
