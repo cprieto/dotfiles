@@ -64,8 +64,7 @@ else
     set background=dark
     color sunburst
     hi cursorline cterm=none
-    hi cursorlinenr cterm=underline
-    hi cursorlinenr ctermfg=red
+    hi cursorlinenr cterm=underline,bold
 endif
 
 if has("gui_running")
