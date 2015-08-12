@@ -12,6 +12,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'atelierbram/vim-colors_atelier-schemes'
 NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
+NeoBundle 'zanloy/vim-colors-sunburst'
 
 call neobundle#end()
 
@@ -45,14 +46,23 @@ set tm=500
 " Colors!
 syntax enable
 syntax on
+set cursorline
 if has("gui_running")
     set background=light
     color jaime
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
-    set transparency=5
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+    hi cursorlinenr guibg=#ffcb69
+    hi cursorline gui=NONE guibg=white
+    hi cursor guibg=lightblue
+    if has("gui_macvim")
+        set transparency=5
+    endif
 else
     set background=dark
-    color mango
+    color sunburst
+    hi cursorline cterm=none
+    hi cursorlinenr cterm=underline
+    hi cursorlinenr ctermfg=red
 endif
 
 if has("gui_running")
