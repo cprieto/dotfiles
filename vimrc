@@ -16,6 +16,7 @@ NeoBundle 'goatslacker/mango.vim'
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'zanloy/vim-colors-sunburst'
+NeoBundle 'dag/vim-fish'
 
 call neobundle#end()
 
@@ -64,8 +65,7 @@ else
     set background=dark
     color sunburst
     hi cursorline cterm=none
-    hi cursorlinenr cterm=underline
-    hi cursorlinenr ctermfg=red
+    hi cursorlinenr cterm=underline,bold
 endif
 
 if has("gui_running")
