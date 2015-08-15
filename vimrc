@@ -17,6 +17,10 @@ NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'zanloy/vim-colors-sunburst'
 NeoBundle 'dag/vim-fish'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
@@ -65,7 +69,8 @@ else
     set background=dark
     color sunburst
     hi cursorline cterm=none
-    hi cursorlinenr cterm=underline,bold
+    hi cursorlinenr cterm=underline
+    hi cursorlinenr ctermfg=red
 endif
 
 if has("gui_running")
@@ -102,3 +107,7 @@ set laststatus=2
 let g:airline_powerline_fonts=1
 
 let g:mustache_abbreviations = 1
+
+" Until we figured out how to detect the shell, I have to check this
+set shell=/bin/bash
+
