@@ -1,6 +1,20 @@
 set nocompatible
 filetype off
 
+let os = ""
+if has("win32")
+    let os = "win"
+else
+    if has("unix")
+        let s:uname = system("uname")
+        if s:uname == "Darwin"
+            let os = "mac"
+        else
+            let os = "unix"
+        endif
+    endif
+endif
+
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -67,7 +81,14 @@ if has("gui_running")
     endif
 else
     set background=dark
-    color sunburst
+
+    if os == "mac"
+        color mango
+    endif
+    if os == "unix"
+        color sunburst
+    endif
+
     hi cursorline cterm=none
     hi cursorlinenr cterm=underline
     hi cursorlinenr ctermfg=red
@@ -108,6 +129,7 @@ let g:airline_powerline_fonts=1
 
 let g:mustache_abbreviations = 1
 
-" Until we figured out how to detect the shell, I have to check this
-set shell=/bin/bash
+if has("unix")
+    set shell=/bin/bash
+endif
 
