@@ -92,10 +92,15 @@ else
     if os == "unix"
         color sunburst
     endif
+    if has("win32")
+    endif
 
     hi cursorline cterm=none
     hi cursorlinenr cterm=underline
-    hi cursorlinenr ctermfg=red
+    if has("unix")
+        hi cursorlinenr ctermfg=red
+    endif
+
 endif
 
 if has("gui_running")
