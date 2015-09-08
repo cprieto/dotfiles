@@ -23,7 +23,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'atelierbram/vim-colors_atelier-schemes'
 NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
 NeoBundle 'goatslacker/mango.vim'
@@ -35,6 +34,11 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'keith/tmux.vim'
+NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'juvenn/mustache.vim'
+NeoBundle 'cakebaker/scss-syntax.vim'
+NeoBundle 'jpitblado/vim-stata'
 
 call neobundle#end()
 
