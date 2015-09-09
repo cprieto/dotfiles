@@ -5,6 +5,27 @@ function fish_prompt --description 'Write out the prompt'
 		set -g __fish_prompt_normal (set_color normal)
 	end
 
+	set --local NVM_VERSION (nvm current)
+
+	if test -n "$VIRTUAL_ENV" -o $NVM_VERSION != "none"
+		echo -n -s (set_color white) "[" (set_color normal)
+	end
+
+	if test $NVM_VERSION != "none"
+		echo -n -s (set_color white) $NVM_VERSION
+		if set -q VIRTUAL_ENV
+			echo -n -s (set_color blue) ":"
+		end if
+	end
+
+	if set -q VIRTUAL_ENV
+		echo -n -s (set_color white) (basename "$VIRTUAL_ENV") (set_color normal)
+	end
+
+	if test -n "$VIRTUAL_ENV" -o $NVM_VERSION != "none"
+		echo -n -s (set_color white) "]" (set_color normal) " "
+	end
+
 	# PWD
 	set_color $fish_color_cwd
 	echo -n (prompt_pwd)
