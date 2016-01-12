@@ -42,7 +42,7 @@ function __docker_prompt --description "Write the number of running containers"
 
   set -l number_containers (count $docker_containers)
   if math "$number_containers>0" > /dev/null
-    echo -s -n "[🐳  " (count docker_containers) " running]"
+    echo -s -n "[🐳  " $number_containers " running]"
   end
 
   set_color normal
