@@ -78,6 +78,7 @@ set t_vb=
 set tm=500
 
 " Colors!
+set t_Co=256
 syntax enable
 syntax on
 set cursorline
@@ -114,7 +115,6 @@ endif
 if has("gui_running")
   set guioptions-=T
   set guioptions+=e
-  set t_Co=256
   set guitablabel=%M\ %t
 endif
 
