@@ -146,7 +146,6 @@ let g:airline_powerline_fonts=1
 
 let g:mustache_abbreviations = 1
 
-if has("unix")
+if has("unix") && $SHELL =~ 'bin/fish'
     set shell=/bin/bash
 endif
-
