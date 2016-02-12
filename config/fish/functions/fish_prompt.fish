@@ -55,10 +55,10 @@ function fish_prompt --description 'Write out the prompt'
 		set -g __fish_prompt_normal (set_color normal)
 	end
 
-  printf '%s' (__nvm_prompt $fish_color_comment)
-  printf '%s' (__virtual_env_prompt $fish_color_comment)
-  printf '%s' (__docker_prompt $fish_color_comment)
-  printf ' '
+    printf '%s' (__nvm_prompt $fish_color_comment)
+    printf '%s' (__virtual_env_prompt $fish_color_comment)
+    printf '%s' (__docker_prompt $fish_color_comment)
+    printf ' '
 
 	# PWD
 	set_color $fish_color_cwd

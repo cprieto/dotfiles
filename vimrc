@@ -39,6 +39,14 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascr
 NeoBundle 'juvenn/mustache.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'jpitblado/vim-stata'
+NeoBundle 'vim-scripts/groovy.vim'
+NeoBundle 'tfnico/vim-gradle'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'edsono/vim-matchit'
+NeoBundle 'vim-scripts/closetag.vim'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'udalov/kotlin-vim'
+NeoBundle 'scrooloose/nerdcommenter'
 
 call neobundle#end()
 
