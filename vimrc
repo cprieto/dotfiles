@@ -30,7 +30,6 @@ NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'zanloy/vim-colors-sunburst'
 NeoBundle 'dag/vim-fish'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
@@ -78,7 +77,6 @@ set t_vb=
 set tm=500
 
 " Colors!
-set t_Co=256
 syntax enable
 syntax on
 set cursorline
@@ -111,6 +109,8 @@ else
     endif
 
 endif
+
+set t_Co=256
 
 if has("gui_running")
   set guioptions-=T
@@ -149,3 +149,6 @@ let g:mustache_abbreviations = 1
 if has("unix") && $SHELL =~ 'bin/fish'
     set shell=/bin/bash
 endif
+
+" Show line numbers in NetRW
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
