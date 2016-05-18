@@ -21,7 +21,12 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'dylon/vim-antlr'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'cespare/vim-toml'
+NeoBundle 'triglav/vim-visual-increment'
+NeoBundle "scrooloose/syntastic"
 NeoBundle 'bling/vim-airline'
 NeoBundle 'atelierbram/vim-colors_atelier-schemes'
 NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
@@ -34,7 +39,8 @@ NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'keith/tmux.vim'
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'juvenn/mustache.vim'
 NeoBundle 'cakebaker/scss-syntax.vim'
 NeoBundle 'jpitblado/vim-stata'
@@ -46,6 +52,7 @@ NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'udalov/kotlin-vim'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'sevko/vim-nand2tetris-syntax'
 
 call neobundle#end()
 
@@ -82,11 +89,12 @@ syntax on
 set cursorline
 if has("gui_running")
     set background=light
-    color jaime
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+    color stonewashed-themes
     hi cursorlinenr guibg=#ffcb69
     hi cursorline gui=NONE guibg=white
     hi cursor guibg=lightblue
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+
     if has("gui_macvim")
         set transparency=5
     endif
