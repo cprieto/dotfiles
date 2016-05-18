@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-let os = ""
+let os = "" 
 if has("win32")
     let os = "win"
 else
@@ -16,48 +16,53 @@ else
 endif
 
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set runtimepath+=~/.vim/bundle/Vundle.vim
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+call vundle#begin()
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'dylon/vim-antlr'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'triglav/vim-visual-increment'
-NeoBundle "scrooloose/syntastic"
-NeoBundle 'bling/vim-airline'
-NeoBundle 'atelierbram/vim-colors_atelier-schemes'
-NeoBundle 'jaimebuelta/jaime-vim-colorscheme'
-NeoBundle 'goatslacker/mango.vim'
-NeoBundle 'ekalinin/Dockerfile.vim'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'zanloy/vim-colors-sunburst'
-NeoBundle 'dag/vim-fish'
-NeoBundle 'fholgado/minibufexpl.vim'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'keith/tmux.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'juvenn/mustache.vim'
-NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'jpitblado/vim-stata'
-NeoBundle 'vim-scripts/groovy.vim'
-NeoBundle 'tfnico/vim-gradle'
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'edsono/vim-matchit'
-NeoBundle 'vim-scripts/closetag.vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'udalov/kotlin-vim'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'sevko/vim-nand2tetris-syntax'
+Plugin 'VundleVim/Vundle.vim'
 
-call neobundle#end()
+" Syntax plugins
+Plugin 'dylon/vim-antlr'
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'fatih/vim-go'
+Plugin 'dag/vim-fish'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'juvenn/mustache.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'jpitblado/vim-stata'
+Plugin 'vim-scripts/groovy.vim'
+Plugin 'tfnico/vim-gradle'
+Plugin 'udalov/kotlin-vim'
+Plugin 'sevko/vim-nand2tetris-syntax'
+
+" Theme plugins
+Plugin 'atelierbram/vim-colors_atelier-schemes'
+Plugin 'jaimebuelta/jaime-vim-colorscheme'
+Plugin 'goatslacker/mango.vim'
+Plugin 'zanloy/vim-colors-sunburst'
+
+" Behaviour plugins
+Plugin 'triglav/vim-visual-increment'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'keith/tmux.vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'edsono/vim-matchit'
+Plugin 'vim-scripts/closetag.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mattn/emmet-vim'
+
+call vundle#end()
 
 filetype plugin indent on
-NeoBundleCheck
 
 " General section
 set history=700
