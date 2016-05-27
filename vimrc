@@ -107,7 +107,11 @@ if has("gui_running")
     if has("gui_macvim")
         set transparency=5
     endif
+    set guioptions-=T
+    set guioptions+=e
+    set guitablabel=%M\ %t
 else
+    set t_Co=256
     set background=dark
 
     if os == "mac"
@@ -124,15 +128,6 @@ else
     if has("unix")
         hi cursorlinenr ctermfg=red
     endif
-
-endif
-
-set t_Co=256
-
-if has("gui_running")
-  set guioptions-=T
-  set guioptions+=e
-  set guitablabel=%M\ %t
 endif
 
 set encoding=utf8
