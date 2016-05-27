@@ -30,3 +30,10 @@ fundle init
 
 # NVM configuration
 bass source ~/.nvm/nvm.sh
+
+# Let's check if docker is running
+set -l __docker_machine (docker-machine ls --filter State=Running -f "{{.Name}}")
+
+alias ll "ls -lhs"
+
+set -gx PATH /usr/local/sbin $PATH

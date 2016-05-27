@@ -14,6 +14,7 @@ function fish_greeting
     echo -s "    ____/ o o \\"
     echo -s "  /~____  =ø= /"
     echo -s " (______)__m_m)"
+    echo ""
     echo -s (set_color normal) "Welcome back " (set_color green) $full_user_name[1] (set_color normal) " !"
     echo ""
 
