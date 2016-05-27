@@ -111,8 +111,12 @@ if has("gui_running")
     set guioptions+=e
     set guitablabel=%M\ %t
 else
-    set t_Co=256
     set background=dark
+
+    " this fails in Windows
+    if os == "mac"||os == "unix"
+        set t_Co=256
+    endif
 
     if os == "mac"
         color mango
