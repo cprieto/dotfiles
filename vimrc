@@ -168,3 +168,8 @@ endif
 
 " Show line numbers in NetRW
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+
+if os == "win"
+    inoremap <Char-0x07F> <BS>
+    nnoremap <Char-0x07F> <BS>
+endif
