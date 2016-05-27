@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 let os = "" 
-if has("win32")
+if has("win32")||has("win32unix") " Because it could be Cygwin
     let os = "win"
 else
     if has("unix")
@@ -16,7 +16,11 @@ else
 endif
 
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/Vundle.vim
+    if os == "win"
+        set runtimepath+=~/vimfiles/bundle/Vundle.vim
+    else
+        set runtimepath+=~/.vim/bundle/Vundle.vim
+    endif
 endif
 
 call vundle#begin()
