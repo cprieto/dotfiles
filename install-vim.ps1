@@ -11,7 +11,7 @@ if ((Test-Path -Path $BundlesDir) -eq $False) {
 $VundleDir = Join-Path -Path $BundlesDir -ChildPath Vundle.vim
 if ((Test-Path -Path $VundleDir) -eq $False) {
     Write-Host "clonning Vundle..."
-    git clone https://github.com/VundleVim/Vundle.vim.git $VundleDir
+    git clone https://github.com/VundleVim/Vundle.vim.git $VundleDir --config core.autocrlf=false
 }
 
 $Vimrc = Join-Path -Path $HOME -ChildPath _vimrc
