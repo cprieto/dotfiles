@@ -1,12 +1,13 @@
 set nocompatible
 filetype off
 
+" What OS are we running?
 let os = "" 
-if has("win32")||has("win32unix") " Because it could be Cygwin
+if has("win32")||has("win32unix") 
     let os = "win"
 else
     if has("unix")
-        let s:uname = system("uname")
+        let s:uname = substitute(system("uname -s"), '\n', '', '')
         if s:uname == "Darwin"
             let os = "mac"
         else
@@ -43,12 +44,14 @@ Plugin 'vim-scripts/groovy.vim'
 Plugin 'tfnico/vim-gradle'
 Plugin 'udalov/kotlin-vim'
 Plugin 'sevko/vim-nand2tetris-syntax'
+Plugin 'vim-scripts/asmM6502.vim'
 
 " Theme plugins
 Plugin 'atelierbram/vim-colors_atelier-schemes'
 Plugin 'jaimebuelta/jaime-vim-colorscheme'
 Plugin 'goatslacker/mango.vim'
 Plugin 'zanloy/vim-colors-sunburst'
+Plugin 'mkarmona/materialbox'
 
 " Behaviour plugins
 Plugin 'triglav/vim-visual-increment'
@@ -98,23 +101,24 @@ syntax on
 set cursorline
 if has("gui_running")
     set background=light
-    color stonewashed-themes
+
+    if has("gui_macvim")
+        color materialbox
+        set transparency=5
+    endif
+    
+    set guioptions-=T
+    set guioptions+=e
+    set guitablabel=%M\ %t
+
     hi cursorlinenr guibg=#ffcb69
     hi cursorline gui=NONE guibg=white
     hi cursor guibg=lightblue
     set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
-
-    if has("gui_macvim")
-        set transparency=5
-    endif
-    set guioptions-=T
-    set guioptions+=e
-    set guitablabel=%M\ %t
-else
+else " This is for non graphical UI
     set background=dark
 
-    " this fails in Windows
-    if os == "mac"||os == "unix"
+    if os == "unix"||os == "mac"
         set t_Co=256
     endif
 
@@ -125,9 +129,9 @@ else
         color sunburst
     endif
     if has("win32")
-        let g:airline_theme = 'base16'
-        let &t_AB="\e[48;5;%dm"
-        let &t_AF="\e[38;5;%dm"
+        let g:airline_theme = "base16"
+        let &t_AB=""
+        let &t_AF=""
     endif
 
     hi cursorline cterm=none
@@ -135,6 +139,7 @@ else
     if has("unix")
         hi cursorlinenr ctermfg=red
     endif
+
 endif
 
 set encoding=utf8
