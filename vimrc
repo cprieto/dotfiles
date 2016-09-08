@@ -19,6 +19,8 @@ endif
 if has('vim_starting')
     if os == "win"
         set runtimepath+=~/vimfiles/bundle/Vundle.vim
+    elseif has('nvim')
+        set runtimepath+=~/.config/nvim/bundle/Vundle.vim
     else
         set runtimepath+=~/.vim/bundle/Vundle.vim
     endif
@@ -45,6 +47,7 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'udalov/kotlin-vim'
 Plugin 'sevko/vim-nand2tetris-syntax'
 Plugin 'vim-scripts/asmM6502.vim'
+Plugin 'nickhutchinson/vim-cmake-syntax'
 
 " Theme plugins
 Plugin 'atelierbram/vim-colors_atelier-schemes'
