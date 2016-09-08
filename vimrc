@@ -123,7 +123,7 @@ else " This is for non graphical UI
     endif
 
     if os == "mac"
-        color mango
+        color materialbox
     endif
     if os == "unix"
         color sunburst
