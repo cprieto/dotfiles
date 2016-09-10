@@ -1,4 +1,6 @@
-eval (python -m virtualfish)
+if command -v pip > /dev/null
+    eval (python -m virtualfish)
+end
 if test -e /usr/libexec/java_home
     set -x JAVA_HOME (/usr/libexec/java_home)
 end
