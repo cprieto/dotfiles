@@ -1,4 +1,4 @@
-if command -v pip > /dev/null
+if test (command -v pip > /dev/null) -a test (pip list | grep virtualfish)
     eval (python -m virtualfish)
 end
 if test -e /usr/libexec/java_home
