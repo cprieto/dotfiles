@@ -13,7 +13,7 @@ set -x LESS_TERMCAP_ue (printf "\e[0m")
 set -x LESS_TERMCAP_us (printf "\e[01;32m")
 
 # Check if fundle exists, if not, install it
-if not functions -q fundle; eval (wget https://git.io/fundle -O ~/.config/fish/functions/fundle.fish); end
+if not functions -q fundle; eval (curl -sL https://git.io/fundle-install); end
 
 # Fundle plugins
 fundle plugin 'edc/bass'
