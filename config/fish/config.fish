@@ -1,5 +1,10 @@
-eval (python -m virtualfish)
-set -x JAVA_HOME (/usr/libexec/java_home)
+if test (command -v pip > /dev/null) -a test (pip list | grep virtualfish)
+    eval (python -m virtualfish)
+end
+if test -e /usr/libexec/java_home
+    set -x JAVA_HOME (/usr/libexec/java_home)
+end
+
 
 set -x LESS_TERMCAP_mb (printf "\e[01;31m")
 set -x LESS_TERMCAP_md (printf "\e[01;31m")
@@ -10,7 +15,7 @@ set -x LESS_TERMCAP_ue (printf "\e[0m")
 set -x LESS_TERMCAP_us (printf "\e[01;32m")
 
 # Check if fundle exists, if not, install it
-if not functions -q fundle; eval (curl -sFL https://git.io/fundle-install); end
+if not functions -q fundle; eval (curl -sL https://git.io/fundle-install); end
 
 # Fundle plugins
 fundle plugin 'edc/bass'
@@ -20,10 +25,14 @@ fundle plugin 'oh-my-fish/theme-clearance'
 fundle init
 
 # NVM configuration
-bass source ~/.nvm/nvm.sh
+if test -e ~/.nvm/nvm.sh
+    bass source ~/.nvm/nvm.sh
+end
 
 # RVM configuration
-bass source ~/.rvm/scripts/rvm
+if test -d ~/.rvm
+    bass source ~/.rvm/scripts/rvm
+end
 
 alias ll "ls -lhs"
 
