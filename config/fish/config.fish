@@ -1,10 +1,9 @@
-if test (command -v pip > /dev/null) -a test (pip list | grep virtualfish)
+if test (command -v pip) -a (pip list | grep virtualfish)
     eval (python -m virtualfish)
 end
 if test -e /usr/libexec/java_home
     set -x JAVA_HOME (/usr/libexec/java_home)
 end
-
 
 set -x LESS_TERMCAP_mb (printf "\e[01;31m")
 set -x LESS_TERMCAP_md (printf "\e[01;31m")
@@ -20,7 +19,7 @@ if not functions -q fundle; eval (curl -sL https://git.io/fundle-install); end
 # Fundle plugins
 fundle plugin 'edc/bass'
 fundle plugin 'tuvistavie/oh-my-fish-core'
-fundle plugin 'oh-my-fish/theme-clearance'
+fundle plugin 'cprieto/theme-clearance'
 
 fundle init
 
