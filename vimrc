@@ -30,7 +30,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Syntax plugins
+" # Syntax plugins
+Plugin 'cfdrake/vim-carthage'
 Plugin 'dylon/vim-antlr'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
