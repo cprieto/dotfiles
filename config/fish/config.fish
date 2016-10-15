@@ -1,6 +1,9 @@
-if test (command -v pip) -a (pip list | grep virtualfish)
+if test (command -v pip)
+  if test (pip list | grep virtualfish)
     eval (python -m virtualfish)
+  end
 end
+
 if test -e /usr/libexec/java_home
     set -x JAVA_HOME (/usr/libexec/java_home)
 end
