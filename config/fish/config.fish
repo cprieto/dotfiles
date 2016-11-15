@@ -1,5 +1,5 @@
 if test (command -v pip)
-  if test (pip list | grep virtualfish)
+  if test (pip list --format=legacy | grep virtualfish)
     eval (python -m virtualfish)
   end
 end
