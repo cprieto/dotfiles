@@ -105,6 +105,7 @@ set tm=500
 syntax enable
 syntax on
 set cursorline
+
 if has("gui_running")
     set background=light
 
@@ -120,7 +121,11 @@ if has("gui_running")
     hi cursorlinenr guibg=#ffcb69
     hi cursorline gui=NONE guibg=white
     hi cursor guibg=lightblue
-    set guifont=Monoisome\ Regular:h12
+    if os == "unix"
+        set guifont=Monoisome\ Semi-Condensed\ 10
+    else
+        set guifont=Monoisome\ Regular:h12
+    endif
 else " This is for non graphical UI
     set background=dark
 
