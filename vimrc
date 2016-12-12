@@ -32,7 +32,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " # Syntax plugins
 Plugin 'cfdrake/vim-carthage'
-Plugin 'dylon/vim-antlr'
+Plugin 'jrozner/vim-antlr'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -71,6 +71,7 @@ Plugin 'edsono/vim-matchit'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
+
 
 call vundle#end()
 
@@ -119,7 +120,7 @@ if has("gui_running")
     hi cursorlinenr guibg=#ffcb69
     hi cursorline gui=NONE guibg=white
     hi cursor guibg=lightblue
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+    set guifont=Monoisome\ Regular:h12
 else " This is for non graphical UI
     set background=dark
 
