@@ -49,12 +49,14 @@ Plugin 'udalov/kotlin-vim'
 Plugin 'sevko/vim-nand2tetris-syntax'
 Plugin 'vim-scripts/asmM6502.vim'
 Plugin 'nickhutchinson/vim-cmake-syntax'
-Plugin 'vimscripts/gtk-vim-syntax'
+Plugin 'vim-scripts/gtk-vim-syntax'
 
 " Theme plugins
 Plugin 'atelierbram/vim-colors_atelier-schemes'
 Plugin 'jaimebuelta/jaime-vim-colorscheme'
 Plugin 'goatslacker/mango.vim'
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'zanloy/vim-colors-sunburst'
 Plugin 'mkarmona/materialbox'
 
