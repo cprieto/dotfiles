@@ -50,6 +50,8 @@ Plugin 'sevko/vim-nand2tetris-syntax'
 Plugin 'vim-scripts/asmM6502.vim'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'vimscripts/gtk-vim-syntax'
+Plugin 'juliosueiras/cakebuild.vim'
+Plugin 'PProvost/vim-ps1'
 
 " Theme plugins
 Plugin 'atelierbram/vim-colors_atelier-schemes'
