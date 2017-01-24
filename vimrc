@@ -49,7 +49,6 @@ Plugin 'udalov/kotlin-vim'
 Plugin 'sevko/vim-nand2tetris-syntax'
 Plugin 'vim-scripts/asmM6502.vim'
 Plugin 'nickhutchinson/vim-cmake-syntax'
-Plugin 'vimscripts/gtk-vim-syntax'
 Plugin 'juliosueiras/cakebuild.vim'
 Plugin 'PProvost/vim-ps1'
 
@@ -57,6 +56,8 @@ Plugin 'PProvost/vim-ps1'
 Plugin 'atelierbram/vim-colors_atelier-schemes'
 Plugin 'jaimebuelta/jaime-vim-colorscheme'
 Plugin 'goatslacker/mango.vim'
+Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'zanloy/vim-colors-sunburst'
 Plugin 'mkarmona/materialbox'
 
@@ -107,6 +108,7 @@ set tm=500
 syntax enable
 syntax on
 set cursorline
+
 if has("gui_running")
     set background=light
 
@@ -122,7 +124,11 @@ if has("gui_running")
     hi cursorlinenr guibg=#ffcb69
     hi cursorline gui=NONE guibg=white
     hi cursor guibg=lightblue
-    set guifont=Monoisome\ Regular:h12
+    if os == "unix"
+        set guifont=Monoisome\ Semi-Condensed\ 10
+    else
+        set guifont=Monoisome\ Regular:h12
+    endif
 else " This is for non graphical UI
     set background=dark
 
