@@ -75,6 +75,9 @@ Plugin 'vim-scripts/closetag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 
+" Omnifunc plugins
+Plugin 'flowtype/vim-flow'
+
 
 call vundle#end()
 
@@ -114,7 +117,7 @@ if has("gui_running")
 
     if has("gui_macvim")
         color materialbox
-        set transparency=5
+        set transparency=2
     endif
     
     set guioptions-=T
@@ -127,7 +130,7 @@ if has("gui_running")
     if os == "unix"
         set guifont=Monoisome\ Semi-Condensed\ 10
     else
-        set guifont=Monoisome\ Regular:h12
+        set guifont=Fira\ Code:h14
     endif
 else " This is for non graphical UI
     set background=dark
@@ -195,3 +198,7 @@ if os == "win"
     inoremap <Char-0x07F> <BS>
     nnoremap <Char-0x07F> <BS>
 endif
+
+" Enable omnifunc
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
