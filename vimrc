@@ -51,6 +51,7 @@ Plugin 'vim-scripts/asmM6502.vim'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'juliosueiras/cakebuild.vim'
 Plugin 'PProvost/vim-ps1'
+Plugin 'vim-scripts/cue.vim'
 
 " Theme plugins
 Plugin 'atelierbram/vim-colors_atelier-schemes'
@@ -74,6 +75,7 @@ Plugin 'edsono/vim-matchit'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
+Plugin 'MattesGroeger/vim-bookmarks'
 
 " Omnifunc plugins
 Plugin 'flowtype/vim-flow'
