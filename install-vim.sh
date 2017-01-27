@@ -10,3 +10,12 @@ fi
 
 echo Copying vimrc...
 cp vimrc ~/.vimrc
+
+if [ $(ls -dAo $VUNDLE_PATH/../*) -gt 1 ]
+then
+    echo Updating plugins...
+    vim +PluginUpdate +qall
+else
+    echo Installing plugins...
+    vim +PluginInstall +qall
+fi
