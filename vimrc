@@ -71,11 +71,11 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'keith/tmux.vim'
 Plugin 'Townk/vim-autoclose'
-Plugin 'edsono/vim-matchit'
 Plugin 'vim-scripts/closetag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'direnv/direnv.vim'
 
 " Omnifunc plugins
 Plugin 'flowtype/vim-flow'
