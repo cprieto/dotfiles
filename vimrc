@@ -16,6 +16,13 @@ else
     endif
 endif
 
+if os == "win"
+    " This is because Windows...
+    source $VIMRUNTIME/vimrc_example.vim
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+endif
+
 if has('vim_starting')
     if os == "win"
         set runtimepath+=~/vimfiles/bundle/Vundle.vim
@@ -29,7 +36,6 @@ endif
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-
 " # Syntax plugins
 Plugin 'cfdrake/vim-carthage'
 Plugin 'jrozner/vim-antlr'
@@ -109,10 +115,31 @@ set novisualbell
 set t_vb=
 set tm=500
 
+set encoding=utf8
+set ffs=unix,dos,mac
+
 " Colors!
 syntax enable
 syntax on
-set cursorline
+set nu
+
+" Files and backup
+set nobackup
+set nowb
+set noswapfile
+
+" Tabs and indent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smarttab
+
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
 
 if has("gui_running")
     set background=light
@@ -134,12 +161,20 @@ if has("gui_running")
     else
         set guifont=Fira\ Code:h14
     endif
-else " This is for non graphical UI
-    set background=dark
-
-    if os == "unix"||os == "mac"
-        set t_Co=256
+else " Console version of VIM
+    if os == "win"
+        set term=xterm
+        let &t_AB="\e[48;5;%dm"
+        let &t_AF="\e[38;5;%dm"
     endif
+
+    set background=dark
+    set t_Co=256
+    
+    hi cursorline cterm=none
+    hi cursorlinenr cterm=underline
+
+    set cursorline
 
     if os == "mac"
         color materialbox
@@ -147,43 +182,18 @@ else " This is for non graphical UI
     if os == "unix"
         color sunburst
     endif
-    if has("win32")
-        let g:airline_theme = "base16"
-        let &t_AB=""
-        let &t_AF=""
-    endif
 
-    hi cursorline cterm=none
-    hi cursorlinenr cterm=underline
+    " Both Mac and Linux look better with red
     if has("unix")
         hi cursorlinenr ctermfg=red
     endif
-
 endif
 
-set encoding=utf8
-set ffs=unix,dos,mac
+" Powerline and conemu hack for fonts
+if os == "win" && !empty($CONEMUBUILD)
+    silent "chcp 65001"
+endif
 
-" Files and backup
-set nobackup
-set nowb
-set noswapfile
-
-" Tabs and indent
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set nu
-
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
-
-" Powerline
 set laststatus=2
 let g:airline_powerline_fonts=1
 

@@ -17,3 +17,15 @@ if ((Test-Path -Path $VundleDir) -eq $False) {
 $Vimrc = Join-Path -Path $HOME -ChildPath _vimrc
 Write-Host "Copying vimrc..."
 Copy-Item vimrc $Vimrc
+
+$num_packages = (Get-ChildItem -Path (Get-Item $VundleDir).Parent.FullName `
+	| ? { $_.PsIsContainer -and $_.FullName -notmatch (Get-Item $VundleDir).Name } `
+	| Measure-Object).Count
+
+If ($num_packages -gt 0) {
+	Write-Host "Updating packages..."
+	vim +PluginUpdate +qall
+} Else {
+	Write-Host "Installing packages..."
+	vim +PluginInstall +qall
+}
