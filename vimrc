@@ -170,9 +170,6 @@ else " Console version of VIM
 
     set background=dark
     set t_Co=256
-    
-    hi cursorline cterm=none
-    hi cursorlinenr cterm=underline
 
     set cursorline
 
@@ -187,6 +184,9 @@ else " Console version of VIM
     if has("unix")
         hi cursorlinenr ctermfg=red
     endif
+
+    hi cursorline cterm=none
+    hi cursorlinenr cterm=underline
 endif
 
 " Powerline and conemu hack for fonts
