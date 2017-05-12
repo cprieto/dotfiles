@@ -58,6 +58,7 @@ Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'juliosueiras/cakebuild.vim'
 Plugin 'PProvost/vim-ps1'
 Plugin 'vim-scripts/cue.vim'
+Plugin 'arrufat/vala.vim'
 
 " Theme plugins
 Plugin 'atelierbram/vim-colors_atelier-schemes'
