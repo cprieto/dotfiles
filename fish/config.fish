@@ -4,7 +4,7 @@ if test (command -v pip)
   end
 end
 
-if test -e /usr/libexec/java_home
+if [ -e /usr/libexec/java_home ]
     set -x JAVA_HOME (/usr/libexec/java_home)
 end
 
@@ -16,18 +16,15 @@ set -x LESS_TERMCAP_so (printf "\e[01;44;33m")
 set -x LESS_TERMCAP_ue (printf "\e[0m")
 set -x LESS_TERMCAP_us (printf "\e[01;32m")
 
-# Check if fundle exists, if not, install it
-if not functions -q fundle; eval (curl -sL https://git.io/fundle-install); end
-
-# Fundle plugins
-fundle plugin 'edc/bass'
-fundle plugin 'tuvistavie/oh-my-fish-core'
-fundle plugin 'cprieto/theme-clearance'
-
-fundle init
+# Install fisher
+if not functions -q fisher
+    echo "Installing fisherman for the first time"
+    curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+    fisher
+end
 
 # NVM configuration
-if test -e ~/.nvm/nvm.sh
+if [ -e ~/.nvm/nvm.sh ]
     bass source ~/.nvm/nvm.sh
 end
 
@@ -39,3 +36,14 @@ end
 alias ll "ls -lhs"
 
 set -gx PATH /usr/local/sbin $PATH
+
+if test (command -v direnv)
+    eval (direnv hook fish)
+end
+
+# Erlang and kerl
+#if test (command -v kerl)
+#    source ~/.kerl/init.fish
+#end
+
+#rvm default > /dev/null ^ /dev/null
