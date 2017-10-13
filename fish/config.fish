@@ -22,16 +22,16 @@ set -x LESS_TERMCAP_us (printf "\e[01;32m")
 if not functions -q fisher
     echo "Installing fisherman for the first time"
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-    fisher
 end
+
+ev ~/.config/env > /dev/null
 
 alias ll "ls -lhs"
 if [ -d /usr/local/sbin ]
     set -gx PATH /usr/local/sbin $PATH
 end
 
-if [ -d ~/Code/go ]
-    set -gx GOPATH ~/Code/go
+if [ -d $GOPATH ]
     set -gx PATH $GOPATH/bin $PATH
 end
 
@@ -40,27 +40,11 @@ end
 #    source ~/.kerl/init.fish
 #end
 
-#if command -s rbenv > /dev/null
-#    status --is-interactive; and source (rbenv init -|psub)
-#end
-
 if command -sq direnv
     eval (direnv hook fish)
-end
-
-if command -sq pew
-    set -gx WORKON_HOME ~/.virtualenvs
-end
-
-if command -sq pipenv
-    set -gx PIPENV_VENV_IN_PROJECT True
 end
 
 if command -sq rbenv
     status --is-interactive; and source (rbenv init -|psub)
 end
 
-# Homebrew stuff
-if command -sq brew
-    set -gx HOMEBREW_GITHUB_API_TOKEN 4744aa90b9de80b8d98d2f8a4d1bb82b24845e43
-end
