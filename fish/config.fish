@@ -1,4 +1,6 @@
-if test (command -v pip)
+set -gx PATH /usr/local/opt/python/libexec/bin $PATH
+
+if command -sq pip
   if test (pip list --format=legacy | grep virtualfish)
     eval (python -m virtualfish)
   end
@@ -23,22 +25,14 @@ if not functions -q fisher
     fisher
 end
 
-# NVM configuration
-if [ -e ~/.nvm/nvm.sh ]
-    bass source ~/.nvm/nvm.sh
-end
-
-# RVM configuration
-if test -d ~/.rvm
-    bass source ~/.rvm/scripts/rvm
-end
-
 alias ll "ls -lhs"
+if [ -d /usr/local/sbin ]
+    set -gx PATH /usr/local/sbin $PATH
+end
 
-set -gx PATH /usr/local/sbin $PATH
-
-if test (command -v direnv)
-    eval (direnv hook fish)
+if [ -d ~/Code/go ]
+    set -gx GOPATH ~/Code/go
+    set -gx PATH $GOPATH/bin $PATH
 end
 
 # Erlang and kerl
@@ -46,4 +40,27 @@ end
 #    source ~/.kerl/init.fish
 #end
 
-#rvm default > /dev/null ^ /dev/null
+#if command -s rbenv > /dev/null
+#    status --is-interactive; and source (rbenv init -|psub)
+#end
+
+if command -sq direnv
+    eval (direnv hook fish)
+end
+
+if command -sq pew
+    set -gx WORKON_HOME ~/.virtualenvs
+end
+
+if command -sq pipenv
+    set -gx PIPENV_VENV_IN_PROJECT True
+end
+
+if command -sq rbenv
+    status --is-interactive; and source (rbenv init -|psub)
+end
+
+# Homebrew stuff
+if command -sq brew
+    set -gx HOMEBREW_GITHUB_API_TOKEN 4744aa90b9de80b8d98d2f8a4d1bb82b24845e43
+end
