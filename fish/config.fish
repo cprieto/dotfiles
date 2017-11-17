@@ -1,4 +1,6 @@
-set -gx PATH /usr/local/opt/python/libexec/bin $PATH
+if [ -d /usr/local/opt/python/libexec/bin ]
+  set -gx PATH /usr/local/opt/python/libexec/bin $PATH
+end
 
 if command -sq pip
   if test (pip list --format=legacy | grep virtualfish)
@@ -24,7 +26,9 @@ if not functions -q fisher
     curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 end
 
-ev ~/.config/env > /dev/null
+if [ -d ~/.config/env ]
+  ev ~/.config/env > /dev/null
+end
 
 alias ll "ls -lhs"
 if [ -d /usr/local/sbin ]
