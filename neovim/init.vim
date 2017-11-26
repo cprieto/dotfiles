@@ -1,6 +1,6 @@
 " set termguicolors
 
-" Plugin system for plug
+" Plugin system
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -8,15 +8,15 @@ Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'MattesGroeger/vim-bookmarks'
-
+Plug 'airblade/vim-gitgutter'
+Plug 'Shougo/vinarise.vim'
 
 " Themes
 Plug 'vim-airline/vim-airline-themes'
 
-call plug#end()
+" Additional syntax highlight
 
-" Airline symbols
-let g:airline_powerline_fonts = 1
+call plug#end()
 
 " editor options
 set nu
@@ -61,3 +61,12 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+
+" Keyboard shortcuts
+map <silent> <C-n> :NERDTreeToggle<cr>
+
+" Airline symbols
+let g:airline_powerline_fonts = 1
+let g:airline_theme='bubblegum'
+let g:airline_skip_empty_sections = 1
+
