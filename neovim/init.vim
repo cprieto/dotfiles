@@ -10,6 +10,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/vinarise.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-sensible'
 
 " Themes
 Plug 'vim-airline/vim-airline-themes'
@@ -69,4 +71,4 @@ map <silent> <C-n> :NERDTreeToggle<cr>
 let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 let g:airline_skip_empty_sections = 1
-
+set noshowmode
