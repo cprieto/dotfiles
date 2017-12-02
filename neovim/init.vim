@@ -12,9 +12,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/vinarise.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
+Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons'
 
 " Themes
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tyrannicaltoucan/vim-quantum'
 
 " Additional syntax highlight
 
@@ -31,6 +34,10 @@ if has("unix")
   hi cursorlinenr ctermfg=red
 endif
 set background=dark
+set termguicolors
+colorscheme quantum
+let g:quantum_italics=1
+set guifont=DroidSansMono_Nerd_Font:h11
 
 " Tabs and indent
 set expandtab
@@ -69,6 +76,6 @@ map <silent> <C-n> :NERDTreeToggle<cr>
 
 " Airline symbols
 let g:airline_powerline_fonts = 1
-let g:airline_theme='bubblegum'
+let g:airline_theme='quantum'
 let g:airline_skip_empty_sections = 1
 set noshowmode
