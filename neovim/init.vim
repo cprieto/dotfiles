@@ -27,17 +27,19 @@ call plug#end()
 set nu
 syntax enable
 syntax on
-set cursorline
-hi cursorline cterm=none
-hi cursorlinenr cterm=underline
-if has("unix")
-  hi cursorlinenr ctermfg=red
-endif
 set background=dark
 set termguicolors
-colorscheme quantum
-let g:quantum_italics=1
-set guifont=DroidSansMono_Nerd_Font:h11
+if has("unix")
+  colorscheme quantum
+  let g:quantum_italics=1
+  set guifont=DroidSansMono_Nerd_Font:h11
+  let g:airline_theme='quantum'
+else " This is Windows environment in Powershell maybe
+  hi cursorlinenr gui=underline
+  hi cursorlinenr guifg=red
+  hi cursorline guibg=none
+  set cursorline
+endif
 
 " Tabs and indent
 set expandtab
@@ -76,6 +78,5 @@ map <silent> <C-n> :NERDTreeToggle<cr>
 
 " Airline symbols
 let g:airline_powerline_fonts = 1
-let g:airline_theme='quantum'
 let g:airline_skip_empty_sections = 1
 set noshowmode
