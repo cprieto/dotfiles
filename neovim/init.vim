@@ -34,6 +34,9 @@ if has("unix")
   let g:quantum_italics=1
   set guifont=DroidSansMono_Nerd_Font:h11
   let g:airline_theme='quantum'
+  if has("macunix")
+    highlight Normal guibg=None
+  endif
 else " This is Windows environment in Powershell maybe
   hi cursorlinenr gui=underline
   hi cursorlinenr guifg=red
