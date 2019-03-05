@@ -14,12 +14,18 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'elixir-editors/vim-elixir'
+Plug 'sbdchd/vim-run'
+Plug 'wincent/command-t'
 
 " Themes
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
 
 " Additional syntax highlight
+Plug 'fatih/vim-go'
+Plug 'dag/vim-fish'
 
 call plug#end()
 
@@ -34,6 +40,7 @@ if has("unix")
   let g:quantum_italics=1
   set guifont=DroidSansMono_Nerd_Font:h11
   let g:airline_theme='quantum'
+  set cursorline
   if has("macunix")
     highlight Normal guibg=None
   endif
@@ -83,3 +90,4 @@ map <silent> <C-n> :NERDTreeToggle<cr>
 let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 set noshowmode
+
